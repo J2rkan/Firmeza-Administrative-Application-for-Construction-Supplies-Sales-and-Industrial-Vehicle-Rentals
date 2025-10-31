@@ -1,0 +1,16 @@
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/bin/Debug/net8.0/Firmeza.Application.deps.json
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/bin/Debug/net8.0/Firmeza.Application.dll
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/bin/Debug/net8.0/Firmeza.Application.pdb
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.AssemblyInfoInputs.cache
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.AssemblyInfo.cs
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.csproj.CoreCompileInputs.cache
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.sourcelink.json
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.dll
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/refint/Firmeza.Application.dll
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.pdb
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/ref/Firmeza.Application.dll
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/bin/Debug/net8.0/Firmeza.Core.dll
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/bin/Debug/net8.0/Firmeza.Core.pdb
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza.Application.csproj.AssemblyReference.cache
+/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Application/obj/Debug/net8.0/Firmeza..B328F532.Up2Date
