@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/Coder/.nuget/packages/": {}
+    "C:\\Users\\miram\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Core/Firmeza.Core.csproj",
+      "projectUniqueName": "C:\\Users\\miram\\Source\\Repos\\Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals\\Firmeza.Core\\Firmeza.Core.csproj",
       "projectName": "Firmeza.Core",
-      "projectPath": "/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Core/Firmeza.Core.csproj",
-      "packagesPath": "/home/Coder/.nuget/packages/",
-      "outputPath": "/home/Coder/Escritorio/jerkan/Firmeza/Firmeza.Core/obj/",
+      "projectPath": "C:\\Users\\miram\\Source\\Repos\\Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals\\Firmeza.Core\\Firmeza.Core.csproj",
+      "packagesPath": "C:\\Users\\miram\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\miram\\Source\\Repos\\Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals\\Firmeza.Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/Coder/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\miram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -43,7 +50,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -64,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

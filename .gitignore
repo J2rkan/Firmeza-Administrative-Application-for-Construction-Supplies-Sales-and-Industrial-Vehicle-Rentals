@@ -1,0 +1,28 @@
+# Resultado de la compilación
+[Bb]in/
+[Oo]bj/
+
+# Paquetes NuGet
+*.nupkg
+# Directorio de caché de paquetes (se usa para las restauraciones)
+# No subirlo, el comando 'dotnet restore' lo maneja.
+.nuget/
+
+# Archivos de depuración y logs
+*.pdb
+*.log
+
+# Archivos de Visual Studio / Rider
+# IGNORAR carpeta de caché y configuración del IDE (¡LA CAUSA DE TU ERROR!)
+.vs/
+*.suo
+*.user
+
+# Archivos de configuración de Rider
+.idea/
+
+# Archivos de Mac OS
+.DS_Store
+
+# Archivos generados automáticamente por Entity Framework Core
+[Mm]igrations/

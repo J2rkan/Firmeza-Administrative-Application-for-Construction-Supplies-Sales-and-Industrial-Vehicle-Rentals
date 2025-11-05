@@ -1,8 +1,11 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Firmeza.Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Firmeza.Admin.Controllers;
+
+[Authorize(Roles = "Administrador")]
 
 public class HomeController : Controller
 {

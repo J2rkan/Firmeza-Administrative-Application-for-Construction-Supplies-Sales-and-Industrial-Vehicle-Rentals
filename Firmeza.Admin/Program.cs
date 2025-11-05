@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Firmeza.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-
+using Firmeza.Core.Interfaces;
+using Firmeza.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 
 // Add services to the container.
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

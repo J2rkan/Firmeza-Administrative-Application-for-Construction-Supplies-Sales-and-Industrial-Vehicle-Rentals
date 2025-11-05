@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Core", "Firmeza.Core\Firmeza.Core.csproj", "{9FDF15A7-6B87-4C04-8E46-7ABFF1E908E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Application", "Firmeza.Application\Firmeza.Application.csproj", "{C040FCBA-4D3A-4440-9D02-BB2B1EBBF08D}"
@@ -9,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Admin", "Firmeza.Admin\Firmeza.Admin.csproj", "{2DEBB350-D778-4541-97C9-1F61F4E105C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Test", "Firmeza.Test\Firmeza.Test.csproj", "{3003BD5A-AECE-489F-A650-8D92E6824AA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +44,8 @@ Global
 		{3003BD5A-AECE-489F-A650-8D92E6824AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3003BD5A-AECE-489F-A650-8D92E6824AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3003BD5A-AECE-489F-A650-8D92E6824AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
