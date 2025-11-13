@@ -17,61 +17,59 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Firmeza.Admin
 build_property.RootNamespace = Firmeza.Admin
-build_property.ProjectDir = C:\Users\miram\Source\Repos\Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals\Firmeza.Admin\
+build_property.ProjectDir = /home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\miram\Source\Repos\Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals\Firmeza.Admin
+build_property.MSBuildProjectDirectory = /home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miram/Source/Repos/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-iua6cjroch
+[/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0c2t08zlbu

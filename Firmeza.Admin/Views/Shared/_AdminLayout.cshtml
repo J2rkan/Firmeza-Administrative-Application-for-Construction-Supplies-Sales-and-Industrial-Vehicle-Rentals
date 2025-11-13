@@ -1,30 +1,93 @@
-﻿@model Firmeza.Application.ViewModels.DashboardViewModel 
-@{
-    // 1. Enlazar el layout de administración
-    Layout = "_AdminLayout";
-    ViewData["Title"] = "Dashboard Administrativo";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Firmeza Admin</title>
+    
+    @* Asume que ya tienes las referencias a Bootstrap (o al template) *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    @* Si estás usando una plantilla como SB Admin 2, usa los estilos de la plantilla aquí *@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" type="text/css">
+</head>
+<body id="page-top">
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-</div>
+    <div id="wrapper">
 
-<div class="row">
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Productos
-                        </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-boxes fa-2x text-gray-300"></i>
-                    </div>
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-controller="Admin" asp-action="Index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
+                <div class="sidebar-brand-text mx-3">Firmeza Admin</div>
+            </a>
+
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                Gestión
             </div>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Product" asp-action="Index">
+                    <i class="fas fa-fw fa-box-open"></i>
+                    <span>Inventario (Productos)</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Client" asp-action="Index">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Gestión de Clientes</span>
+                </a>
+            </li>
+            
+            @* Aquí iría el enlace a Gestión de Ventas (TASK 9) *@
+
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Logout">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </li>
+            
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                @* Aquí iría el código del Topbar (barra superior) *@
+
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+                </div>
+            @* Aquí iría el Footer *@
+
         </div>
-    </div>
-</div>
+        </div>
+    @* Scripts *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @* Renderiza scripts específicos de la vista *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
