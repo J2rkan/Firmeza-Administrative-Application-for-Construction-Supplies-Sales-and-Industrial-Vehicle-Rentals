@@ -78,8 +78,39 @@ namespace Firmeza.Infrastructure.Services
                 }
 
                 // NORMALIZACIÓN 2: PRODUCTOS (y crear una nueva venta)
-                if (row.ContainsKey("ProductName") && decimal.TryParse(row.GetValueOrDefault("Price", "0"), out decimal price) && int.TryParse(row.GetValueOrDefault("Quantity", "0"), out int quantity))
+                if (row.ContainsKey("ProductName"))
                 {
+                    int quantity = 0;
+                    decimal price = 0;
+
+                    try
+                    {
+                        // Requisito: Capturar excepciones al convertir datos (int.Parse)
+                        string quantityStr = row.GetValueOrDefault("Quantity", "0");
+                        quantity = int.Parse(quantityStr);
+                    }
+                    catch (FormatException)
+                    {
+                        log.Errors.Add($"Error de formato: La cantidad '{row.GetValueOrDefault("Quantity")}' no es válida para el producto '{row["ProductName"]}'.");
+                        continue;
+                    }
+                    catch (OverflowException)
+                    {
+                        log.Errors.Add($"Error: La cantidad es demasiado grande para el producto '{row["ProductName"]}'.");
+                        continue;
+                    }
+
+                    try
+                    {
+                        string priceStr = row.GetValueOrDefault("Price", "0");
+                        price = decimal.Parse(priceStr);
+                    }
+                    catch (FormatException)
+                    {
+                        log.Errors.Add($"Error de formato: El precio '{row.GetValueOrDefault("Price")}' no es válido.");
+                        continue;
+                    }
+
                     var productName = row["ProductName"];
                     Product product;
 

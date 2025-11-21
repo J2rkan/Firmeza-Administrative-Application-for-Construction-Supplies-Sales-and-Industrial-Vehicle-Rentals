@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Firmeza.Core\Firmeza.Core.csproj" />
+        <ProjectReference Include="..\Firmeza.Application\Firmeza.Application.csproj" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="EPPlus" Version="8.2.1" />
@@ -18,7 +19,7 @@
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
-      <PackageReference Include="QuestPDF" Version="2025.7.3" />
+      <PackageReference Include="QuestPDF" Version="2025.7.4" />
     </ItemGroup>
 
 </Project>
