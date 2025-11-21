@@ -4,12 +4,30 @@ Sistema administrativo web desarrollado en **ASP.NET Core 8** para la gestión d
 
 ## 🚀 Características Principales
 
+### Panel Administrativo (Razor Pages)
 - **Dashboard Interactivo**: Métricas en tiempo real de ventas, productos y clientes.
 - **Gestión de Inventario**: CRUD completo de productos con control de stock.
 - **Gestión de Clientes**: Administración de base de datos de clientes.
 - **Punto de Venta**: Registro de ventas y generación automática de **Recibos PDF**.
 - **Importación Masiva**: Carga de datos desnormalizados desde Excel con normalización automática.
+- **Exportación a Excel**: Descarga de productos, clientes y ventas en formato Excel.
 - **Seguridad**: Sistema de roles (Administrador/Cliente) basado en ASP.NET Identity.
+
+### API RESTful
+- **Autenticación JWT**: Sistema de tokens para autenticación segura.
+- **Endpoints CRUD**: Gestión completa de productos, clientes y ventas.
+- **Documentación Swagger**: Documentación interactiva de la API.
+- **Envío de Correos**: Notificaciones automáticas por email (SMTP).
+- **Roles y Permisos**: Control de acceso basado en roles (Administrator, Client).
+- **CORS Configurado**: Listo para integración con aplicaciones frontend.
+
+### Portal Cliente (React SPA)
+- **Autenticación Segura**: Login y registro con JWT.
+- **Catálogo de Productos**: Visualización y búsqueda de productos disponibles.
+- **Carrito de Compras**: Gestión completa del carrito con cálculo automático de totales.
+- **Proceso de Compra**: Checkout con confirmación por email.
+- **Diseño Responsive**: Interfaz moderna y adaptativa con TailwindCSS.
+- **Experiencia Fluida**: SPA con React Router para navegación sin recargas.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -65,7 +83,10 @@ Sistema administrativo web desarrollado en **ASP.NET Core 8** para la gestión d
    ```bash
    docker-compose up --build
    ```
-3. Accede a `http://localhost:5000`.
+3. Accede a los servicios:
+   - **Panel Admin**: http://localhost:5000
+   - **API**: http://localhost:5001
+   - **Swagger**: http://localhost:5001
 
 ## 📐 Arquitectura y Diseño
 
