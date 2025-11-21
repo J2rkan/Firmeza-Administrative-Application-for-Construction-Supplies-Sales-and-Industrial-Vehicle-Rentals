@@ -1,5 +1,5 @@
 using Firmeza.Core.Interfaces;
-using OfficeOpenXml; // Necesitas este using para EPPlus
+using OfficeOpenXml;
 
 namespace Firmeza.Infrastructure.Services
 {
@@ -8,8 +8,8 @@ namespace Firmeza.Infrastructure.Services
         
         public ExcelParserService()
         {
-            
-            // ExcelPackage.LicenseContext = LicenseContext.NonCommercial; 
+            // Configurar EPPlus para uso no comercial
+          //  ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
 
         public async Task<List<Dictionary<string, string>>> ParseExcelDataAsync(Stream fileStream)

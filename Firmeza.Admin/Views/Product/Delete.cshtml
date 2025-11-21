@@ -1,12 +1,12 @@
-﻿@model Firmeza.Core.Entities.Product
-
+@model Firmeza.Core.Entities.Product
 @{
     Layout = "_AdminLayout";
     ViewData["Title"] = "Eliminar Producto";
 }
 
+
 <h1 class="h3 mb-2 text-gray-800">Eliminar Producto</h1>
-<p class="text-danger">¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.</p>
+<p class="mb-4 text-danger font-weight-bold"><i class="fas fa-exclamation-triangle"></i> ¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.</p>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -14,41 +14,47 @@
     </div>
     <div class="card-body">
         <dl class="row">
-            <dt class="col-sm-3">
+            <dt class="col-sm-3 text-gray-800">
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Name)
             </dd>
 
-            <dt class="col-sm-3">
+            <dt class="col-sm-3 text-gray-800">
                 @Html.DisplayNameFor(model => model.Description)
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Description)
             </dd>
 
-            <dt class="col-sm-3">
+            <dt class="col-sm-3 text-gray-800">
                 @Html.DisplayNameFor(model => model.Price)
             </dt>
             <dd class="col-sm-9">
                 @Model.Price.ToString("C")
             </dd>
 
-            <dt class="col-sm-3">
+            <dt class="col-sm-3 text-gray-800">
                 @Html.DisplayNameFor(model => model.Stock)
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Stock)
             </dd>
         </dl>
+        
+        <hr/>
 
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
 
             <div class="mt-4">
-                <input type="submit" value="Confirmar Eliminación" class="btn btn-danger" />
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Confirmar Eliminación
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
             </div>
         </form>
     </div>

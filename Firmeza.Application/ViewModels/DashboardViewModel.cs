@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Firmeza.Core.Entities;
 
 namespace Firmeza.Application.ViewModels
 {
@@ -11,7 +7,10 @@ namespace Firmeza.Application.ViewModels
         public int TotalProducts { get; set; }
         public int TotalClients { get; set; }
         public int TotalSales { get; set; }
-
         public decimal TotalRevenueToday { get; set; }
+        public decimal TotalRevenueThisMonth { get; set; }
+        public decimal TotalRevenueAllTime { get; set; }
+        public int LowStockProducts { get; set; }
+        public List<Sale> RecentSales { get; set; } = new List<Sale>();
     }
 }

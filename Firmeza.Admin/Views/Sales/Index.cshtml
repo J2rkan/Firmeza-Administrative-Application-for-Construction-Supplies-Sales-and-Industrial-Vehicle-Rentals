@@ -1,0 +1,167 @@
+@model List<Firmeza.Core.Entities.Sale>
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Ventas";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Gestión de Ventas</h1>
+    <div>
+        <a asp-action="ExportToExcel" class="btn btn-success btn-sm">
+            <i class="fas fa-file-excel"></i> Exportar a Excel
+        </a>
+    </div>
+</div>
+
+<!-- Tarjetas de Resumen -->
+<div class="row mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    Total de Ventas
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Count()</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                    Ingresos Totales
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Sum(s => s.Total).ToString("C")</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                    Promedio por Venta
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    @(Model.Count() > 0 ? Model.Average(s => s.Total).ToString("C") : "$0.00")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                    Venta Más Alta
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    @(Model.Count() > 0 ? Model.Max(s => s.Total).ToString("C") : "$0.00")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla de Ventas -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-primary text-white">
+        <h6 class="m-0 font-weight-bold">Historial de Ventas</h6>
+    </div>
+    <div class="card-body">
+        @if (Model != null && Model.Count() > 0)
+        {
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID Venta</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Monto Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sale in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge bg-primary">@sale.id</span>
+                                </td>
+                                <td>
+                                    <small>@sale.Date.ToString("dd/MM/yyyy HH:mm")</small>
+                                </td>
+                                <td>
+                                    <strong>@(sale.Client?.Name ?? "N/A")</strong>
+                                </td>
+                                <td>
+                                    <span class="text-success font-weight-bold">@sale.Total.ToString("C")</span>
+                                </td>
+                                <td>
+                                    <a asp-action="DownloadReceipt" asp-route-id="@sale.id" class="btn btn-sm btn-info" title="Descargar Recibo">
+                                        <i class="fas fa-download"></i> Recibo
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i> No hay ventas registradas aún.
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Estadísticas por Mes -->
+@if (Model.Count() > 0)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h6 class="m-0 font-weight-bold">Ventas por Mes (Últimos 12 Meses)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Mes</th>
+                                    <th>Cantidad de Ventas</th>
+                                    <th>Ingresos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    var salesByMonth = Model
+                                        .Where(s => s.Date >= DateTime.Now.AddMonths(-12))
+                                        .GroupBy(s => new { s.Date.Year, s.Date.Month })
+                                        .OrderByDescending(g => g.Key.Year)
+                                        .ThenByDescending(g => g.Key.Month)
+                                        .ToList();
+                                }
+                                @foreach (var group in salesByMonth)
+                                {
+                                    var monthName = new DateTime(group.Key.Year, group.Key.Month, 1).ToString("MMMM yyyy");
+                                    <tr>
+                                        <td><strong>@monthName</strong></td>
+                                        <td>@group.Count()</td>
+                                        <td class="text-success font-weight-bold">@group.Sum(s => s.Total).ToString("C")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

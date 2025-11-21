@@ -1,16 +1,15 @@
-﻿using Firmeza.Core.Entities; // Para la entidad Product
-using Firmeza.Core.Interfaces; // Para IGenericRepository
-using Firmeza.Application.ViewModels; // Para los ViewModels de Producto
+﻿using Firmeza.Core.Entities;
+using Firmeza.Core.Interfaces;
+using Firmeza.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 
 namespace Firmeza.Admin.Controllers
 {
-    // Solo administradores pueden usar este controlador
     [Authorize(Roles = "Administrator")]
     public class ProductController : Controller
     {
-        // Inyectamos el repositorio genérico para la entidad Product
         private readonly IGenericRepository<Product> _productRepository;
 
         public ProductController(IGenericRepository<Product> productRepository)
@@ -18,34 +17,23 @@ namespace Firmeza.Admin.Controllers
             _productRepository = productRepository;
         }
 
-        // ------------------------------------------------------------------
-        // READ: Listar Productos (Index)
-        // ------------------------------------------------------------------
         public async Task<IActionResult> Index()
         {
             var products = await _productRepository.ListAllAsync();
-            // Pasamos la lista de entidades a la vista
             return View(products);
         }
 
-        // ------------------------------------------------------------------
-        // CREATE: Crear Producto - [GET] Muestra el formulario
-        // ------------------------------------------------------------------
         public IActionResult Create()
         {
             return View();
         }
 
-        // ------------------------------------------------------------------
-        // CREATE: Crear Producto - [POST] Recibe y guarda los datos
-        // ------------------------------------------------------------------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Mapeamos el ViewModel a la entidad (sin usar AutoMapper por ahora)
                 var product = new Product
                 {
                     Name = model.Name,
@@ -62,9 +50,6 @@ namespace Firmeza.Admin.Controllers
             return View(model);
         }
 
-        // ------------------------------------------------------------------
-        // DELETE: Eliminar Producto - [GET] Muestra la confirmación
-        // ------------------------------------------------------------------
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -72,12 +57,9 @@ namespace Firmeza.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(product); // Mostramos la entidad completa para confirmar
+            return View(product);
         }
 
-        // ------------------------------------------------------------------
-        // DELETE: Eliminar Producto - [POST] Confirma la eliminación
-        // ------------------------------------------------------------------
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -91,9 +73,6 @@ namespace Firmeza.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ------------------------------------------------------------------
-        // EDIT: Editar Producto - [GET] Muestra el formulario con datos
-        // ------------------------------------------------------------------
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -102,7 +81,6 @@ namespace Firmeza.Admin.Controllers
                 return NotFound();
             }
 
-            // Mapeamos la entidad al ViewModel para edición
             var model = new ProductEditViewModel
             {
                 Id = product.Id,
@@ -115,21 +93,16 @@ namespace Firmeza.Admin.Controllers
             return View(model);
         }
 
-        // ------------------------------------------------------------------
-        // EDIT: Editar Producto - [POST] Recibe y guarda los cambios
-        // ------------------------------------------------------------------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ProductEditViewModel model)
         {
-            // Verificamos que el ID de la ruta coincida con el ID del modelo
             if (id != model.Id || !ModelState.IsValid)
             {
                 if (id != model.Id) return NotFound();
                 return View(model);
             }
 
-            // Mapeamos el ViewModel a la entidad, incluyendo el ID
             var product = new Product
             {
                 Id = model.Id,
@@ -139,12 +112,50 @@ namespace Firmeza.Admin.Controllers
                 Stock = model.Stock
             };
 
-            // La función UpdateAsync del repositorio genérico se encarga de
-            // marcar esta entidad como modificada para EF Core.
             await _productRepository.UpdateAsync(product);
             await _productRepository.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> ExportToExcel()
+        {
+            var products = await _productRepository.ListAllAsync();
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Productos");
+
+                // Headers
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Nombre";
+                worksheet.Cells[1, 3].Value = "Descripción";
+                worksheet.Cells[1, 4].Value = "Precio";
+                worksheet.Cells[1, 5].Value = "Stock";
+
+                // Data
+                int row = 2;
+                foreach (var p in products)
+                {
+                    worksheet.Cells[row, 1].Value = p.Id;
+                    worksheet.Cells[row, 2].Value = p.Name;
+                    worksheet.Cells[row, 3].Value = p.Description;
+                    worksheet.Cells[row, 4].Value = p.Price;
+                    worksheet.Cells[row, 5].Value = p.Stock;
+                    row++;
+                }
+
+                worksheet.Cells.AutoFitColumns();
+
+                var stream = new MemoryStream();
+                package.SaveAs(stream);
+                stream.Position = 0;
+
+                string excelName = $"Productos_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
+            }
         }
     }
 }
