@@ -8,6 +8,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Firmeza.Admin/Firmeza.Admin.csproj", "Firmeza.Admin/"]
+COPY ["Firmeza.Core/Firmeza.Core.csproj", "Firmeza.Core/"]
+COPY ["Firmeza.Application/Firmeza.Application.csproj", "Firmeza.Application/"]
+COPY ["Firmeza.Infrastructure/Firmeza.Infrastructure.csproj", "Firmeza.Infrastructure/"]
 RUN dotnet restore "Firmeza.Admin/Firmeza.Admin.csproj"
 COPY . .
 WORKDIR "/src/Firmeza.Admin"

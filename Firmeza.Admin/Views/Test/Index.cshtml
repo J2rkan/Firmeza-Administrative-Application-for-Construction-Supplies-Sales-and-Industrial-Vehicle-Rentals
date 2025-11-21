@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Página de Prueba";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test - Firmeza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 { font-size: 3em; margin: 0; }
+        p { font-size: 1.5em; }
+        .links { margin-top: 30px; }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .links a:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ @ViewBag.Message</h1>
+        <p>Hora del servidor: @ViewBag.Time</p>
+        <div class="links">
+            <a href="/Admin">Dashboard</a>
+            <a href="/Product">Productos</a>
+            <a href="/Sales">Ventas</a>
+            <a href="/Import">Importar</a>
+        </div>
+    </div>
+</body>
+</html>

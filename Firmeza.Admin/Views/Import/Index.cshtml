@@ -1,0 +1,222 @@
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Importar Datos";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Importar Datos</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <!-- Card Principal -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white py-3">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="fas fa-upload"></i> Cargar Archivo Excel
+                </h6>
+            </div>
+            <div class="card-body">
+                <!-- Mensajes de Error -->
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    @foreach (var modelState in ViewData.ModelState.Values)
+                    {
+                        @foreach (var error in modelState.Errors)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="fas fa-exclamation-circle"></i> @error.ErrorMessage
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                    }
+                }
+
+                <form method="post" enctype="multipart/form-data" asp-action="Upload">
+                    @Html.AntiForgeryToken()
+
+                    <!-- Área de Drop -->
+                    <div class="border-2 border-dashed border-primary rounded p-5 text-center" id="dropArea" style="cursor: pointer; background-color: #f8f9fa; border: 2px dashed #007bff;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #007bff;"></i>
+                        <h5 class="mt-3 text-primary">Arrastra tu archivo aquí</h5>
+                        <p class="text-muted">o haz clic para seleccionar</p>
+                        <input type="file" id="excelFile" name="excelFile" accept=".xlsx,.xls" class="form-control d-none" />
+                        <small class="text-muted d-block mt-2">
+                            Formatos aceptados: .xlsx, .xls | Tamaño máximo: 5 MB
+                        </small>
+                    </div>
+
+                    <!-- Archivo Seleccionado -->
+                    <div id="fileInfo" class="mt-3" style="display: none;">
+                        <div class="alert alert-info">
+                            <i class="fas fa-check-circle"></i> Archivo seleccionado: 
+                            <strong id="fileName"></strong>
+                            <br />
+                            <small>Tamaño: <span id="fileSize"></span></small>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" disabled>
+                            <i class="fas fa-upload"></i> Importar Datos
+                        </button>
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Información de Ayuda -->
+        <div class="card shadow">
+            <div class="card-header bg-info text-white py-3">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="fas fa-info-circle"></i> Información
+                </h6>
+            </div>
+            <div class="card-body">
+                <h6 class="font-weight-bold mb-3">Requisitos del Archivo Excel:</h6>
+                <ul>
+                    <li>El archivo debe estar en formato <strong>.xlsx</strong> o <strong>.xls</strong></li>
+                    <li>Tamaño máximo: <strong>5 MB</strong></li>
+                    <li>Debe contener las hojas de: <strong>Productos</strong>, <strong>Clientes</strong>, <strong>Ventas</strong>, <strong>Detalles de Venta</strong></li>
+                    <li>Las columnas deben coincidir con los campos de cada entidad</li>
+                </ul>
+
+                <h6 class="font-weight-bold mt-4 mb-3">Formato de Columnas:</h6>
+                
+                <div class="accordion" id="accordionHelp">
+                    <!-- Productos -->
+                    <div class="card">
+                        <div class="card-header" id="headingProducts">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseProducts">
+                                    📦 Hoja: Productos
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseProducts" class="collapse" data-parent="#accordionHelp">
+                            <div class="card-body">
+                                <code>
+                                    Name | Description | Price | Stock
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clientes -->
+                    <div class="card">
+                        <div class="card-header" id="headingClients">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseClients">
+                                    👥 Hoja: Clientes
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseClients" class="collapse" data-parent="#accordionHelp">
+                            <div class="card-body">
+                                <code>
+                                    Name | Document | Email | Phone | Address
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventas -->
+                    <div class="card">
+                        <div class="card-header" id="headingSales">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSales">
+                                    💰 Hoja: Ventas
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSales" class="collapse" data-parent="#accordionHelp">
+                            <div class="card-body">
+                                <code>
+                                    ClientId | Date | Total
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detalles de Venta -->
+                    <div class="card">
+                        <div class="card-header" id="headingSaleDetails">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSaleDetails">
+                                    📋 Hoja: Detalles de Venta
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSaleDetails" class="collapse" data-parent="#accordionHelp">
+                            <div class="card-body">
+                                <code>
+                                    SaleId | ProductId | Quantity | UnitPrice
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Drag and Drop
+    const dropArea = document.getElementById('dropArea');
+    const fileInput = document.getElementById('excelFile');
+    const fileInfo = document.getElementById('fileInfo');
+    const fileName = document.getElementById('fileName');
+    const fileSize = document.getElementById('fileSize');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Click para seleccionar archivo
+    dropArea.addEventListener('click', () => fileInput.click());
+
+    // Drag over
+    dropArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropArea.style.backgroundColor = '#e7f3ff';
+        dropArea.style.borderColor = '#0056b3';
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+        dropArea.style.backgroundColor = '#f8f9fa';
+        dropArea.style.borderColor = '#007bff';
+    });
+
+    // Drop
+    dropArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropArea.style.backgroundColor = '#f8f9fa';
+        dropArea.style.borderColor = '#007bff';
+
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            updateFileInfo();
+        }
+    });
+
+    // Cambio en input file
+    fileInput.addEventListener('change', updateFileInfo);
+
+    function updateFileInfo() {
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            fileName.textContent = file.name;
+            fileSize.textContent = (file.size / 1024).toFixed(2) + ' KB';
+            fileInfo.style.display = 'block';
+            submitBtn.disabled = false;
+        } else {
+            fileInfo.style.display = 'none';
+            submitBtn.disabled = true;
+        }
+    }
+</script>

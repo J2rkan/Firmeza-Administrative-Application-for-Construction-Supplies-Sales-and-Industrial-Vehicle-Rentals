@@ -12,7 +12,7 @@
           "Firmeza.Core": "1.0.0",
           "Firmeza.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.4",
-          "Microsoft.EntityFrameworkCore.Design": "8.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
         },
         "runtime": {
@@ -1137,7 +1137,7 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/8.0.4": {},
-      "Microsoft.EntityFrameworkCore.Design/8.0.0": {
+      "Microsoft.EntityFrameworkCore.Design/8.0.4": {
         "dependencies": {
           "Humanizer.Core": "2.14.1",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.8.0",
@@ -1147,8 +1147,8 @@
         },
         "runtime": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
+            "assemblyVersion": "8.0.4.0",
+            "fileVersion": "8.0.424.16902"
           }
         }
       },
@@ -1585,11 +1585,11 @@
           }
         }
       },
-      "QuestPDF/2025.7.3": {
+      "QuestPDF/2025.7.4": {
         "runtime": {
           "lib/net8.0/QuestPDF.dll": {
-            "assemblyVersion": "2025.7.3.0",
-            "fileVersion": "2025.7.3.0"
+            "assemblyVersion": "2025.7.4.0",
+            "fileVersion": "2025.7.4.0"
           }
         },
         "runtimeTargets": {
@@ -1661,7 +1661,7 @@
           "runtimes/win-x64/native/libwinpthread-1.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.0.0.0"
           },
           "runtimes/win-x64/native/qpdf.dll": {
             "rid": "win-x64",
@@ -1691,7 +1691,7 @@
           "runtimes/win-x86/native/libwinpthread-1.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.0.0.0"
           },
           "runtimes/win-x86/native/qpdf.dll": {
             "rid": "win-x86",
@@ -1918,7 +1918,7 @@
         },
         "runtime": {
           "Firmeza.Application.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1926,7 +1926,7 @@
       "Firmeza.Core/1.0.0": {
         "runtime": {
           "Firmeza.Core.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1934,15 +1934,16 @@
       "Firmeza.Infrastructure/1.0.0": {
         "dependencies": {
           "EPPlus": "8.2.1",
+          "Firmeza.Application": "1.0.0",
           "Firmeza.Core": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.4",
           "Microsoft.EntityFrameworkCore": "8.0.4",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "QuestPDF": "2025.7.3"
+          "QuestPDF": "2025.7.4"
         },
         "runtime": {
           "Firmeza.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -2487,12 +2488,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/8.0.4",
       "hashPath": "microsoft.entityframeworkcore.analyzers.8.0.4.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/8.0.0": {
+    "Microsoft.EntityFrameworkCore.Design/8.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-94reKYu63jg4O75UI3LMJHwOSi8tQ6IfubiZhdnSsWcgtmAuF8OyLfjK/MIxuvaQRJZAF6E747FIuxjOtb8/og==",
-      "path": "microsoft.entityframeworkcore.design/8.0.0",
-      "hashPath": "microsoft.entityframeworkcore.design.8.0.0.nupkg.sha512"
+      "sha512": "sha512-QD5/h3+h4N7GlUaA4bzaYFW9CoeB7ne2KMiDIENIT0GPx+E6up/v9fDA36FAS3NIq9zeKUAQgN8aj6IwE7tMGw==",
+      "path": "microsoft.entityframeworkcore.design/8.0.4",
+      "hashPath": "microsoft.entityframeworkcore.design.8.0.4.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.4": {
       "type": "package",
@@ -2795,12 +2796,12 @@
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
     },
-    "QuestPDF/2025.7.3": {
+    "QuestPDF/2025.7.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mEAooT42M8yjw18Etc548RY/OgSb4DqUXS6BjiJVOEFXiW5tFQ0UDcZ0uagjypREKp2Ajb2J6zSoRT5qbYLAng==",
-      "path": "questpdf/2025.7.3",
-      "hashPath": "questpdf.2025.7.3.nupkg.sha512"
+      "sha512": "sha512-XeiWilwLnqP2BIvDG+vh1+fjUoNWczPee5qifw8VppVOH7+vmxgoxG/KANcKftgqAfXiRQ++sXOSLPZRvXxD2g==",
+      "path": "questpdf/2025.7.4",
+      "hashPath": "questpdf.2025.7.4.nupkg.sha512"
     },
     "System.CodeDom/5.0.0": {
       "type": "package",

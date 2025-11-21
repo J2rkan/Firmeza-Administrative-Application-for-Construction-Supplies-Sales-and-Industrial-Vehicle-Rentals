@@ -1,11 +1,9 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Firmeza.Admin.Models;
-using Microsoft.AspNetCore.Authorization;
+using Firmeza.Application.ViewModels;
 
 namespace Firmeza.Admin.Controllers;
-
-[Authorize(Roles = "Administrador")]
 
 public class HomeController : Controller
 {
@@ -18,7 +16,21 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        ViewData["Title"] = "Dashboard Administrativo";
+        
+        var model = new DashboardViewModel 
+        { 
+            TotalProducts = 0,
+            TotalClients = 0,
+            TotalSales = 0,
+            TotalRevenueToday = 0m,
+            TotalRevenueThisMonth = 0m,
+            TotalRevenueAllTime = 0m,
+            LowStockProducts = 0,
+            RecentSales = new List<Firmeza.Core.Entities.Sale>()
+        };
+        
+        return View(model);
     }
 
     public IActionResult Privacy()

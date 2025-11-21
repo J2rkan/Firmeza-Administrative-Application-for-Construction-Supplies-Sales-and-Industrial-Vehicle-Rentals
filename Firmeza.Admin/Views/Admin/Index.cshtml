@@ -1,0 +1,299 @@
+@using Firmeza.Application.ViewModels
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<style>
+    .stat-card {
+        border-radius: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .card-header-custom {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 10px 10px 0 0 !important;
+    }
+</style>
+
+<div class="container-fluid">
+    <!-- Encabezado -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </h1>
+        <div>
+            <span class="text-muted">Última actualización: @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</span>
+        </div>
+    </div>
+
+    <!-- Tarjetas de Estadísticas -->
+    <div class="row mb-4">
+        <!-- Total Productos -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Productos
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalProducts</div>
+                            @if (Model.LowStockProducts > 0)
+                            {
+                                <small class="text-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> @Model.LowStockProducts con stock bajo
+                                </small>
+                            }
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-icon bg-primary text-white">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <a asp-controller="Product" asp-action="Index" class="small text-primary">
+                        Ver todos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Clientes -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Clientes
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalClients</div>
+                            <small class="text-muted">Clientes registrados</small>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-icon bg-success text-white">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <a asp-controller="Client" asp-action="Index" class="small text-success">
+                        Ver todos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Ventas -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Total Ventas
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalSales</div>
+                            <small class="text-muted">Ventas realizadas</small>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-icon bg-info text-white">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <a asp-controller="Sales" asp-action="Index" class="small text-info">
+                        Ver todas <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ingresos Hoy -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Ingresos Hoy
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$@Model.TotalRevenueToday.ToString("N2")</div>
+                            <small class="text-muted">@DateTime.Today.ToString("dd/MM/yyyy")</small>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-icon bg-warning text-white">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <small class="text-muted">
+                        Mes: $@Model.TotalRevenueThisMonth.ToString("N2")
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila de contenido -->
+    <div class="row">
+        <!-- Ingresos Totales -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header card-header-custom">
+                    <h6 class="m-0 font-weight-bold">
+                        <i class="fas fa-chart-line"></i> Resumen de Ingresos
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h4 class="font-weight-bold text-primary">$@Model.TotalRevenueAllTime.ToString("N2")</h4>
+                        <small class="text-muted">Ingresos Totales</small>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span>Este mes:</span>
+                            <strong class="text-success">$@Model.TotalRevenueThisMonth.ToString("N2")</strong>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span>Hoy:</span>
+                            <strong class="text-info">$@Model.TotalRevenueToday.ToString("N2")</strong>
+                        </div>
+                    </div>
+                    <div class="progress mt-3" style="height: 25px;">
+                        @{
+                            var percentage = Model.TotalRevenueAllTime > 0 
+                                ? (Model.TotalRevenueThisMonth / Model.TotalRevenueAllTime * 100) 
+                                : 0;
+                        }
+                        <div class="progress-bar bg-gradient-primary" role="progressbar" 
+                             style="width: @percentage%" 
+                             aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100">
+                            @percentage.ToString("F1")%
+                        </div>
+                    </div>
+                    <small class="text-muted">Mes actual vs Total</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ventas Recientes -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header card-header-custom">
+                    <h6 class="m-0 font-weight-bold">
+                        <i class="fas fa-receipt"></i> Ventas Recientes
+                    </h6>
+                </div>
+                <div class="card-body">
+                    @if (Model.RecentSales.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Fecha</th>
+                                        <th>Cliente</th>
+                                        <th>Total</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var sale in Model.RecentSales)
+                                    {
+                                        <tr>
+                                            <td><strong>#@sale.id</strong></td>
+                                            <td>@sale.Date.ToString("dd/MM/yyyy HH:mm")</td>
+                                            <td>@(sale.Client?.Name ?? "N/A")</td>
+                                            <td class="text-success"><strong>$@sale.Total.ToString("N2")</strong></td>
+                                            <td>
+                                                <a asp-controller="Sales" asp-action="DownloadReceipt" asp-route-id="@sale.id" 
+                                                   class="btn btn-sm btn-outline-danger" title="Descargar PDF">
+                                                    <i class="fas fa-file-pdf"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5 text-muted">
+                            <i class="fas fa-inbox fa-3x mb-3"></i>
+                            <p>No hay ventas registradas aún</p>
+                            <a asp-controller="Import" asp-action="Index" class="btn btn-primary">
+                                <i class="fas fa-file-import"></i> Importar Datos
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accesos Rápidos -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-gradient-primary text-white">
+                    <h6 class="m-0 font-weight-bold">
+                        <i class="fas fa-bolt"></i> Accesos Rápidos
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <a asp-controller="Product" asp-action="Create" class="btn btn-outline-primary btn-block">
+                                <i class="fas fa-plus-circle"></i> Nuevo Producto
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a asp-controller="Client" asp-action="Create" class="btn btn-outline-success btn-block">
+                                <i class="fas fa-user-plus"></i> Nuevo Cliente
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a asp-controller="Import" asp-action="Index" class="btn btn-outline-info btn-block">
+                                <i class="fas fa-file-import"></i> Importar Datos
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a asp-controller="Sales" asp-action="Index" class="btn btn-outline-warning btn-block">
+                                <i class="fas fa-chart-bar"></i> Ver Reportes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

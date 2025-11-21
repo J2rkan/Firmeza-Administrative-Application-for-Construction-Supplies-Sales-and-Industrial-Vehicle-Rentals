@@ -10,6 +10,7 @@
 </div>
 
 <div class="row">
+    <!-- Tarjeta Productos -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
@@ -21,17 +22,108 @@
         </div>
     </div>
 
+    <!-- Tarjeta Clientes -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-            Clientes
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                    Clientes
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalClients</div>
+            </div>
         </div>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalClients</div>
     </div>
 
+    <!-- Tarjeta Ingresos Hoy -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-            Ingresos Hoy
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                    Ingresos Hoy
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalRevenueToday.ToString("C")</div>
+            </div>
         </div>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalRevenueToday.ToString("C")</div>
+    </div>
+
+    <!-- Tarjeta Ventas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                    Ventas Hoy
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.TotalSales</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de Ingresos -->
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h6 class="m-0 font-weight-bold">Ingresos</h6>
+            </div>
+            <div class="card-body">
+                <p><strong>Este Mes:</strong> @Model.TotalRevenueThisMonth.ToString("C")</p>
+                <p><strong>Todo el Tiempo:</strong> @Model.TotalRevenueAllTime.ToString("C")</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-warning text-white">
+                <h6 class="m-0 font-weight-bold">Stock Bajo</h6>
+            </div>
+            <div class="card-body">
+                <p class="text-danger font-weight-bold">@Model.LowStockProducts productos con stock bajo</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ventas Recientes -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h6 class="m-0 font-weight-bold">Ventas Recientes</h6>
+            </div>
+            <div class="card-body">
+                @if (Model.RecentSales != null && Model.RecentSales.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID Venta</th>
+                                    <th>Fecha</th>
+                                    <th>Monto</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var sale in Model.RecentSales)
+                                {
+                                    <tr>
+                                        <td>@sale.id</td>
+                                        <td>@sale.Date.ToString("dd/MM/yyyy HH:mm")</td>
+                                        <td>@sale.Total.ToString("C")</td>
+                                        <td><span class="badge bg-success">Completada</span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted">No hay ventas recientes</p>
+                }
+            </div>
+        </div>
     </div>
 </div>

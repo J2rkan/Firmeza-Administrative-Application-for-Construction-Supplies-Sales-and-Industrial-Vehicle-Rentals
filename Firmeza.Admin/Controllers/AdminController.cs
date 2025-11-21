@@ -1,33 +1,33 @@
-﻿using Firmeza.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Firmeza.Infrastructure.Persistence;
+﻿using Microsoft.AspNetCore.Mvc;
+using Firmeza.Application.ViewModels;
+using Firmeza.Core.Entities;
 
 namespace Firmeza.Admin.Controllers
 {
-    [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ILogger<AdminController> _logger;
 
-        public AdminController(ApplicationDbContext context)
+        public AdminController(ILogger<AdminController> logger)
         {
-            _context = context;
+            _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var viewModel = new DashboardViewModel
-            {
-                TotalProducts = await _context.Products.CountAsync(),
-                TotalClients = await _context.Clients.CountAsync(),
-                TotalSales = await _context.Sales.CountAsync(),
-                TotalRevenueToday = await _context.Sales
-                    .Where(s => s.Date.Date == DateTime.Today)
-                    .SumAsync(s => s.Total)
+            var model = new DashboardViewModel 
+            { 
+                TotalProducts = 0,
+                TotalClients = 0,
+                TotalSales = 0,
+                TotalRevenueToday = 0m,
+                TotalRevenueThisMonth = 0m,
+                TotalRevenueAllTime = 0m,
+                LowStockProducts = 0,
+                RecentSales = new List<Sale>()
             };
-            return View(viewModel);
+            
+            return View(model);
         }
     }
 }

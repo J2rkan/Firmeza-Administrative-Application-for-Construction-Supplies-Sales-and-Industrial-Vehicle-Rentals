@@ -1,39 +1,45 @@
 {
   "format": 1,
   "restore": {
-    "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Firmeza.Admin.csproj": {}
+    "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Admin\\Firmeza.Admin.csproj": {}
   },
   "projects": {
-    "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Firmeza.Admin.csproj": {
+    "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Admin\\Firmeza.Admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Firmeza.Admin.csproj",
+        "projectUniqueName": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Admin\\Firmeza.Admin.csproj",
         "projectName": "Firmeza.Admin",
-        "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/Firmeza.Admin.csproj",
-        "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Admin/obj/",
+        "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Admin\\Firmeza.Admin.csproj",
+        "packagesPath": "C:\\Users\\miram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Admin\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/Coder/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\miram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/Firmeza.Application.csproj": {
-                "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/Firmeza.Application.csproj"
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj"
               },
-              "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj": {
-                "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj"
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj"
               },
-              "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/Firmeza.Infrastructure.csproj": {
-                "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/Firmeza.Infrastructure.csproj"
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\Firmeza.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\Firmeza.Infrastructure.csproj"
               }
             }
           }
@@ -47,7 +53,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -61,7 +68,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -87,34 +94,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/Firmeza.Application.csproj": {
+    "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/Firmeza.Application.csproj",
+        "projectUniqueName": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj",
         "projectName": "Firmeza.Application",
-        "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/Firmeza.Application.csproj",
-        "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Application/obj/",
+        "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj",
+        "packagesPath": "C:\\Users\\miram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/Coder/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\miram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj": {
-                "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj"
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj"
               }
             }
           }
@@ -128,7 +141,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -149,26 +163,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj": {
+    "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj",
+        "projectUniqueName": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj",
         "projectName": "Firmeza.Core",
-        "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj",
-        "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/obj/",
+        "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj",
+        "packagesPath": "C:\\Users\\miram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/Coder/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\miram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -186,7 +206,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -207,34 +228,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/Firmeza.Infrastructure.csproj": {
+    "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\Firmeza.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/Firmeza.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\Firmeza.Infrastructure.csproj",
         "projectName": "Firmeza.Infrastructure",
-        "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/Firmeza.Infrastructure.csproj",
-        "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\Firmeza.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\miram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/Coder/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\miram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj": {
-                "projectPath": "/home/Coder/RiderProjects/Firmeza-Administrative-Application-for-Construction-Supplies-Sales-and-Industrial-Vehicle-Rentals/Firmeza.Core/Firmeza.Core.csproj"
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Application\\Firmeza.Application.csproj"
+              },
+              "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj": {
+                "projectPath": "C:\\Users\\miram\\Desktop\\todaslascarpetas\\antigrativy\\Firmeza-app\\Firmeza.Core\\Firmeza.Core.csproj"
               }
             }
           }
@@ -248,7 +278,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -278,7 +309,7 @@
             },
             "QuestPDF": {
               "target": "Package",
-              "version": "[2025.7.3, )"
+              "version": "[2025.7.4, )"
             }
           },
           "imports": [
@@ -297,7 +328,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
