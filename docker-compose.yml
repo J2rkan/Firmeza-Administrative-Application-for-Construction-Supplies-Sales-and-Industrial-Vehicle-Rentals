@@ -11,6 +11,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - firmeza-network
 
   web:
     build:
@@ -23,6 +25,49 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - db
+    networks:
+      - firmeza-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Firmeza.Api/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Database=FirmezaDB;Username=postgres;Password=your_password
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Jwt__Key=ThisIsAVerySecureSecretKeyForJWTTokenGeneration123456
+      - Jwt__Issuer=FirmezaApi
+      - Jwt__Audience=FirmezaClient
+      - Email__SmtpHost=smtp.gmail.com
+      - Email__SmtpPort=587
+      - Email__SmtpUser=your-email@gmail.com
+      - Email__SmtpPassword=your-app-password
+      - Email__FromEmail=your-email@gmail.com
+      - Email__FromName=Firmeza
+    depends_on:
+      - db
+    networks:
+      - firmeza-network
+
+  client:
+    build:
+      context: ./Firmeza.Client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://api:8080/api
+    depends_on:
+      - api
+    networks:
+      - firmeza-network
 
 volumes:
   postgres_data:
+
+
+networks:
+  firmeza-network:
+    driver: bridge
